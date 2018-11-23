@@ -40,12 +40,12 @@ window.renderStatistics = function (ctx, names, times) {
     var barHeight = Math.round(MAX_BAR_HEIGHT * times[i] / maxTime);
     var barY = (CLOUD_Y + GAP + FONT + PADDING) + (MAX_BAR_HEIGHT - barHeight);
     ctx.fillStyle = '#000000';
-    ctx.fillText(names[i], CLOUD_X + PADDING + (BAR_WIDTH + GAP) * i, NAMES_Y);
-    ctx.fillText(Math.round(times[i]), CLOUD_X + PADDING + (BAR_WIDTH + GAP) * i, barY - PADDING);
-    ctx.fillStyle = 'rgba(0, 0, 255, 1)';
+    ctx.fillText(names[i], CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, NAMES_Y);
+    ctx.fillText(Math.round(times[i]), CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, barY - PADDING);
+    ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
-    ctx.fillRect(CLOUD_X + PADDING + (BAR_WIDTH + GAP) * i, barY, BAR_WIDTH, barHeight);
+    ctx.fillRect(CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, barY, BAR_WIDTH, barHeight);
   }
 };
