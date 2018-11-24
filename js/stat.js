@@ -42,9 +42,10 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillStyle = '#000000';
     ctx.fillText(names[i], CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, NAMES_Y);
     ctx.fillText(Math.round(times[i]), CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, barY - PADDING);
-    ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
     }
     ctx.fillRect(CLOUD_X + PADDING + GAP + (BAR_WIDTH + GAP) * i, barY, BAR_WIDTH, barHeight);
   }
